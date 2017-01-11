@@ -605,18 +605,18 @@ letter-spacing: 1px;
 * 07.START SERVICE DESIGN
 * ----------------------------------------------------------------------------------------
 */
-.our_service{background:#f9f9f9;padding-top:80px;padding-bottom:50px;}
+.our_service{padding-top:80px;padding-bottom:50px;}
 .single_service {
 position: relative;
 margin-bottom: 30px;
 padding:30px;
 }
 .single_service:after {
-background: #13bfb1 none repeat scroll 0 0;
+background: #252525 none repeat scroll 0 0;
 content: "";
 height: 100%;
 left: 0;
-opacity: 0.9;
+opacity: 0.83;
 position: absolute;
 top: 0;
 transition: all 0.2s ease 0s;
@@ -671,7 +671,8 @@ z-index: 999;
 * 08.START PORTFOLIO DESIGN
 * ----------------------------------------------------------------------------------------
 */
-.template_portfolio{padding-bottom: 50px;
+.template_portfolio{background:#f9f9f9;
+    padding-bottom: 50px;
 padding-top: 80px;}
 .single_project {
   padding-bottom: 40px;
