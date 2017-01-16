@@ -57,6 +57,10 @@ a:hover {
     color: #fff;
     text-decoration: none;
 }
+
+.map_a:hover {
+    text-decoration: underline;
+}
 a:focus {
     outline: none;
     text-decoration: none;
@@ -359,15 +363,15 @@ color:#fff!important;
     z-index: -1;
 }
 .slide-1 {
-    background: url(../img/bg/slide1.jpg) scroll 0 0;
+    background: url(../img/bg/bg_1.jpg) scroll 0 0;
     background-size: cover;
 }
 .slide-2 {
-    background: url(../img/bg/slide2.jpg) scroll 0 0;
+    background: url(../img/bg/bg_2.jpg) scroll 0 0;
     background-size: cover;
 }
 .slide-3 {
-    background: url(../img/bg/slide3.jpg) scroll 0 0;
+    background: url(../img/bg/bg_3.jpg) scroll 0 0;
     background-size: cover;
 }
 .carousel-fade .carousel-inner .item {
@@ -1125,7 +1129,7 @@ border: 1px solid #e8e8e9;
 
 .single_address {
 background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
-padding: 40px 20px;
+/* padding: 40px 20px;*/
 }
 @media only screen and (max-width:768px) { 
     .single_address { margin-bottom: 30px }

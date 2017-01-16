@@ -83,17 +83,55 @@ Version      : 1.0
 		  var mapOptions = {
 			zoom: 15,
 			scrollwheel: false,
-			center: new google.maps.LatLng(40.7127837, -74.00594130000002)
+			center: new google.maps.LatLng(50.0854411, 14.4170942)
 		  };
 		  var map = new google.maps.Map(document.getElementById('map'),
 			  mapOptions);
 		  var marker = new google.maps.Marker({
 			position: map.getCenter(),
-			icon: 'assets/img/map_pin.png',
+			//icon: 'assets/img/map_pin.png',
 			map: map
 		  });
 		}
-		google.maps.event.addDomListener(window, 'load', initialize);	
+
+		function initMap() {
+			var mapOptions = {
+				zoom: 15,
+				scrollwheel: false,
+				center: new google.maps.LatLng(50.0854411, 14.4170942)
+			};
+			var map = new google.maps.Map(document.getElementById('map'),
+				mapOptions);
+			var infowindow = new google.maps.InfoWindow();
+			var service = new google.maps.places.PlacesService(map);
+
+			service.getDetails({
+				placeId: 'ChIJZ01HPe-UC0cRcJQaaV0ort4'
+			}, function(place, status) {
+				console.log(place);
+				console.log(status);
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+					var marker = new google.maps.Marker({
+						map: map,
+						position: place.geometry.location
+					});
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+
+							place.formatted_address + '<br>'+
+							'<a class="map_a" target="_blank" jstcache="6" href="https://maps.google.com/maps?ll=50.085474,14.417094&amp;z=19&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3&amp;cid=16045806904028075120"> <span> View on Google Maps </span> </a></div>');
+						infowindow.open(map, this);
+					});
+					infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+
+						place.formatted_address + '<br>'+
+						'<a class="map_a" target="_blank" jstcache="6" href="https://maps.google.com/maps?ll=50.085474,14.417094&amp;z=19&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3&amp;cid=16045806904028075120"> <span> View on Google Maps </span> </a></div>');
+
+					infowindow.open(map, marker);
+				}
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initMap);
 		/*END GOOGLE MAP*/	
 			
 	}); 		
