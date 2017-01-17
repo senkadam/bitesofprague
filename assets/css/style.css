@@ -28,11 +28,15 @@ Version      : 1.0
 */
 body {
 background: #fff none repeat scroll 0 0;
-color: #888;
+color: #777;
 font-family: "Open Sans",sans-serif;
 font-size: 15px;
-font-weight: 300;
+font-weight: 400;
 line-height: 26px;
+}
+.black-font {
+    color: #222;
+    font-weight: 400;
 }
 html,
 body { height: 100% }
@@ -133,12 +137,16 @@ fieldset {
 /*END PRELOADER DESIGN*/
 .section-padding { padding:60px 0 }
 /*START SECTION TITLE DESIGN*/
-.section-title { margin-bottom: 60px }
+.section-title { margin-bottom: 30px }
+.margin-bottom-20 { margin-bottom: 20px }
 .section-title  h2 {
 font-weight: 500;
 letter-spacing: 2px;
 margin-top: 0;
 text-transform: capitalize;
+}
+.section-title-pade {
+    padding-top: 40px;
 }
 .section-title span {
 background: #a8a8a8 none repeat scroll 0 0;
@@ -151,7 +159,7 @@ width: 50px;
 /*END SECTION TITLE DESIGN*/
 /*START SCROLL TO TOP*/
 .topcontrol {
-background: #13bfb1 none repeat scroll 0 0;
+background: #A39168 none repeat scroll 0 0;
 border-radius: 5px;
 bottom: 5px;
 box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
@@ -194,11 +202,18 @@ padding: 10px 0;
 transition: all 0.4s ease-in-out 0s;
 width: 100%;
 }
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:hover,
-.navbar-default .navbar-nav>.active>a:focus {
-    color: #13bfb1 !important;
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a{
+    color: #A39168 !important;
     background-color: transparent;
+    font-weight: bold;
+}
+.navbar-default .navbar-nav>.active>a:hover:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #A39168 !important;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: underline;
 }
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:hover,
@@ -208,7 +223,7 @@ width: 100%;
 }
 .navbar-brand { padding: 0px }
 .navbar-brand img {width: 150px;}
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
     .single_address { margin-left: 10px; }
 }
 .navbar-default .navbar-collapse,
@@ -221,14 +236,14 @@ font-weight: 500;
 letter-spacing: 4px;
 text-transform: uppercase;
 }
-.menu-top li a:hover { color: #13bfb1!important }
-@media only screen and (max-width:768px) { 
+.menu-top li a:hover { color: #A39168!important; text-decoration: underline }
+@media only screen and (max-width:768px) {
     .navbar-default .navbar-nav > li > a {
         margin-top: 10px;
         padding: 8px;
     }
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .menu-top { background-color: #fff }
     .navbar-default .navbar-nav > li > a { color: #313131  !important }
 }
@@ -238,18 +253,18 @@ padding: 10px 0;
 width: 100%;
  margin-top:0px
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .menu-top {
         color: #fff !important;
         margin-left: 0px;
     }
 }
 .navbar-default.menu-shrink li a {color: rgba(0, 0, 0, 0.6) !important; }
-.navbar-default.menu-shrink li a:hover { color: #13bfb1 !important }
+.navbar-default.menu-shrink li a:hover { color: #A39168 !important; text-decoration: underline }
 .navbar-default .navbar-toggle { background: #fff none repeat scroll 0 0 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus { background-color: #fff }
-.navbar-default .navbar-toggle .icon-bar { background-color: #13bfb1 }
+.navbar-default .navbar-toggle .icon-bar { background-color: #A39168 }
 /*
 * ----------------------------------------------------------------------------------------
 * 02.END BOOTSTRAP NAVIGATION OVERRIDES
@@ -282,20 +297,20 @@ line-height: 70px;
 padding-top: 200px;
 text-transform: capitalize;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
 .hero-text h2 {
     font-size: 40px;
     line-height: 40px;
 }
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .hero-text h2 {
 		padding-top: 200px;
         font-size: 30px;
         line-height: 40px;
     }
 }
-@media only screen and (max-width:360px) { 
+@media only screen and (max-width:360px) {
     .hero-text h2 {
         font-size: 26px;
         line-height: 34px;
@@ -306,7 +321,7 @@ color: #fff;
 margin: auto;
 width: 70%;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
 .hero-text p {width: 100%;padding:0px 10px}
 }
 .home_btn{
@@ -332,7 +347,7 @@ border: 2px solid #fff!important;
 color:#fff!important;
 }
 .home_btn_color_one{background: #fff none repeat scroll 0 0 !important;color: #333;}
-.home_btn_color_two{background: #13bfb1 none repeat scroll 0 0 !important;border: 2px solid #13bfb1 !important;color: #fff;}
+.home_btn_color_two{background: #A39168 none repeat scroll 0 0 !important;border: 2px solid #A39168 !important;color: #fff;}
 
 .welcome-area,
 .welcome-slider-area,
@@ -408,20 +423,20 @@ letter-spacing: 2px;
 line-height: 70px;
 text-transform: capitalize;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
 .single-slide-item h2 {
     font-size: 40px;
     line-height: 40px;
 }
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
 .single-slide-item h2 {
 		padding-top: 200px;
         font-size: 30px;
         line-height: 40px;
     }
 }
-@media only screen and (max-width:360px) { 
+@media only screen and (max-width:360px) {
 .single-slide-item h2 {
         font-size: 26px;
         line-height: 34px;
@@ -433,7 +448,7 @@ color: #fff;
 margin: auto;
 width: 70%;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
 .single-slide-item p  {width: 100%;padding:0px 10px}
 }
 .carousel-indicators-slider { bottom: 30px !important }
@@ -464,14 +479,14 @@ text-align: center;
 transition: all 0.2s ease 0s;
 width: 175px;
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
 .single_about {margin-bottom: 15px;width: 175px;}
 }
 .single_about_mrnone{margin-right: 0px;}
-.single_about:hover{background:#13bfb1;border: 1px solid #13bfb1;}
+.single_about:hover{background:#A39168;border: 1px solid #A39168;}
 
 .single_about i {
-color: #13bfb1;
+color: #A39168;
 font-size: 30px;
 margin-bottom: 10px;
 transition: all 0.2s ease 0s;
@@ -483,11 +498,11 @@ transition: all 0.2s ease 0s;
 }
 .single_about:hover h3{color: #fff;}
 /*ABOUT SLIDER*/
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
 .about-slide {margin-top:60px}
 }
 .carousel .slide-control {
-background: #13bfb1 none repeat scroll 0 0;
+background: #A39168 none repeat scroll 0 0;
 border-radius: 30px;
 color: #fff;
 font-size: 30px;
@@ -561,7 +576,7 @@ font-weight: 500;
     width: 100%;
 }
 .progress-bar > span {
-    background: #13bfb1 none repeat scroll 0 0;
+    background: #A39168 none repeat scroll 0 0;
     display: block;
     height: 100%;
     width: 0;
@@ -578,7 +593,7 @@ font-weight: 500;
 * ----------------------------------------------------------------------------------------
 */
 .single_counter{
-background: #13bfb1 none repeat scroll 0 0;
+background: #A39168 none repeat scroll 0 0;
 border-right: 1px solid #0EB9AB;
 box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 padding: 60px 30px;
@@ -616,7 +631,6 @@ margin-bottom: 30px;
 padding:30px;
 }
 .single_service:after {
-background: #252525 none repeat scroll 0 0;
 content: "";
 height: 100%;
 left: 0;
@@ -627,28 +641,24 @@ transition: all 0.2s ease 0s;
 width: 100%;
 z-index: 1;
 }
-.single_service:hover:after{
-background: #000 none repeat scroll 0 0;
-opacity: 0.9;
-}  
+
 
 .single_service_inner{
-border: 1px dashed #fff;
+/* border: 1px dashed #fff;*/
 padding: 25px;
 position: relative;
 z-index: 999;
 transition: all 0.4s ease 0s;
 }
-.single_service:hover .single_service_inner{border:1px dashed #13bfb1}
 .single_service i{
-color: #fff;
+color: #A39168;
 font-size: 40px;
 margin-bottom: 15px;
 position: relative;
 z-index: 999;
 }
 .single_service h4{
-color: #fff;
+color: #000;
 font-size: 22px;
 font-weight: 600;
 letter-spacing: 1px;
@@ -658,7 +668,6 @@ position: relative;
 z-index: 999;
 }
 .single_service p{
-color: #fff;
 margin-bottom: 0;
 position: relative;
 z-index: 999;
@@ -698,7 +707,7 @@ padding-top: 80px;}
 	transition: all 0.2s ease 0s;
 }
 .single_our_work figure{
-	margin-bottom: 0;	
+	margin-bottom: 0;
 }
 .sing_work_text_link{
 	position:absolute;
@@ -733,11 +742,11 @@ letter-spacing: 2px;
 }
 
 .sing_link_img a i.fa{
-	font-size: 14px;	
+	font-size: 14px;
 }
 .sing_link_img a{
-	background: #13bfb1 none repeat scroll 0 0;
-	border: 1px solid #13bfb1;
+	background: #A39168 none repeat scroll 0 0;
+	border: 1px solid #A39168;
 	border-radius: 50%;
 	color: #fff;
 	display: inline-block;
@@ -745,12 +754,12 @@ letter-spacing: 2px;
 	line-height: 39px;
 	-webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
-	width: 40px;	
+	width: 40px;
 }
-.sing_link_img a:hover{	
+.sing_link_img a:hover{
 	background: #fff none repeat scroll 0 0;
 	border-color: #fff;
-	color: #13bfb1;
+	color: #A39168;
 }
 .sing_link_img a.search{
 	margin-right: 16px;
@@ -807,7 +816,7 @@ color: #777;
 font-size: 13px;
 transition: all 0.4s ease 0s;
 }
-.project-list li a:hover{color:#13bfb1;}
+.project-list li a:hover{color:#A39168;}
 /*End project modal*/
 /*
 * ----------------------------------------------------------------------------------------
@@ -824,7 +833,7 @@ transition: all 0.4s ease 0s;
 	position: relative;
 	overflow: hidden;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
 .single_team {margin-bottom:40px}
 }
 .team-hover {
@@ -833,7 +842,7 @@ transition: all 0.4s ease 0s;
 	bottom: -100%;
 	padding: 30px;
 	padding-bottom: 0px;
-	background: #13bfb1;
+	background: #A39168;
 	transition: all 0.3s ease-in-out;
 }
 .single_team:hover .team-hover {
@@ -862,7 +871,7 @@ text-align: center;
 text-transform: uppercase;
 width: 100%;
 }
-.single_team p{color: #fff;} 
+.single_team p{color: #fff;}
 .social {
     text-align: center;
     display: inline-block;
@@ -888,10 +897,10 @@ width: 45px;
 margin: 0px 2px;
 }
 .social li a:hover {
-	color: #13bfb1;
+	color: #A39168;
 }
 .team-name {
-background:#13bfb1;
+background:#A39168;
 opacity:0.8;
 bottom: 0;
 color: #fff;
@@ -930,7 +939,7 @@ padding: 30px;
 text-align: center;
 }
 .testimonial-text i{
-color: #13bfb1;
+color: #A39168;
 font-size: 60px;
 margin-bottom: 20px;
 }
@@ -938,10 +947,10 @@ margin-bottom: 20px;
 float: left;
 margin-right: 20px;
 text-align: center;
-background: #13bfb1;
+background: #A39168;
 padding: 15px 30px;
 }
-@media only screen and (max-width:360px) { 
+@media only screen and (max-width:360px) {
 .testimonial_img{float: none;margin-bottom: 20px;}
 }
 .testimonial_img img{
@@ -972,15 +981,15 @@ margin-bottom: 20px;
 overflow: hidden;
 }
 .carousel-indicators li {
-    border: 1px solid #13bfb1;
+    border: 1px solid #A39168;
     border-radius: 12px;
     height: 12px;
     margin: 0 1px;
     width: 5px;
-    background: #13bfb1;
+    background: #A39168;
 }
 .carousel-indicators .active {
-  background-color: #13bfb1;
+  background-color: #A39168;
   height: 18px;
   margin: 0 1px ;
   width: 5px;
@@ -993,7 +1002,7 @@ overflow: hidden;
 * ----------------------------------------------------------------------------------------
 * 10.END TESTIMONIAL DESIGN
 * ----------------------------------------------------------------------------------------
-*/ 
+*/
 
 
 /*
@@ -1008,7 +1017,7 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 overflow: hidden;
 padding: 20px;
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
 .single_blog {margin-bottom: 40px;}
 }
 .single_blog h3 {
@@ -1034,7 +1043,7 @@ transition: all 0.2s ease 0s;
 }
 .btn-blog-bg:hover,
 .btn-blog-bg:focus {
-    color: #13bfb1;
+    color: #A39168;
 }
 /*
 * ----------------------------------------------------------------------------------------
@@ -1048,7 +1057,7 @@ transition: all 0.2s ease 0s;
 * 12.START COMPANY PARTNER LOGO
 * ----------------------------------------------------------------------------------------
 */
-.partner-logo {background:#13bfb1;}
+.partner-logo {background:#A39168;}
 .partner { text-align: center }
 /*
 * ----------------------------------------------------------------------------------------
@@ -1060,17 +1069,17 @@ transition: all 0.2s ease 0s;
 * 13.START CONTACT FORM , MAP CONTACT ADDRESS DESIGN
 * ----------------------------------------------------------------------------------------
 */
-.contact_area {background:#f9f9f9; padding-top: 60px }
+.contact_area {background:#f9f9f9}
 #map { height: 500px }
 .contact {
     padding-left: 50px;
     padding-right: 60px;
     padding-top: 30px;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
     .contact { padding: 60px 60px 60px 50px }
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .contact {margin-bottom: 60px;
 padding: 0 10px;}
 }
@@ -1084,7 +1093,7 @@ height: 52px;
 padding: 10px;
 width: 520px;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
     .contact input { width: 100% }
 }
 .contact textarea {
@@ -1096,22 +1105,22 @@ border: 1px solid #e8e8e9;
     width: 520px;
     padding: 10px;
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
     .contact textarea { width: 100% }
 }
 .contact input:focus {
-    border: 1px solid #13bfb1;
+    border: 1px solid #A39168;
     box-shadow: none;
     outline: 0 none;
 }
 .contact textarea:focus {
-     border: 1px solid #13bfb1;
+     border: 1px solid #A39168;
     box-shadow: none;
     outline: 0 none;
 }
 .btn-contact-bg {
-    background: #13bfb1 none repeat scroll 0 0 !important;
-    border: 2px solid #13bfb1 !important;
+    background: #A39168 none repeat scroll 0 0 !important;
+    border: 2px solid #A39168 !important;
     border-radius: 3px;
     box-shadow: none;
     color: #fff!important;
@@ -1131,11 +1140,11 @@ border: 1px solid #e8e8e9;
 background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
 /* padding: 40px 20px;*/
 }
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
     .single_address { margin-bottom: 30px }
 }
 .single_address i {
-background: #13bfb1 none repeat scroll 0 0;
+background: #A39168 none repeat scroll 0 0;
 border-radius: 30px;
 color: #fff;
 font-size: 24px;
@@ -1145,10 +1154,10 @@ margin-bottom: 10px;
 width: 55px;
 }
 .single_address p {}
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
     .single_address p { font-size: 15px }
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .single_address p { font-size: 14px }
 }
 /*
@@ -1170,7 +1179,7 @@ background: #25252a none repeat scroll 0 0;
     float: right;
     margin-top: 5px;
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .footer_menu {
         margin-top: 15px;
         float: none;
@@ -1181,11 +1190,11 @@ background: #25252a none repeat scroll 0 0;
     padding: 0;
     list-style: none;
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .footer_menu ul { text-align: center }
 }
 .footer_menu ul li { display: inline }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
     .footer_copyright ul li a { text-align: center }
 }
 .footer_menu ul li a {
@@ -1194,15 +1203,26 @@ background: #25252a none repeat scroll 0 0;
     -webkit-transition: all 0.3s ease 0s;
             transition: all 0.3s ease 0s;
 }
-.footer_menu ul li a:hover { color: #13bfb1 }
+.footer_menu ul li a:hover { color: #A39168 }
 /*END FOOTER SOCIAL DESIGN*/
 .copyright p {
 color:#fff;
 margin-bottom: 0;
 padding-top: 10px;
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
 .copyright p {text-align:center;}
+}
+
+a.footer:hover {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a.footer {
+    color: #fff;
+    text-decoration: underline;
 }
 /*
 * ----------------------------------------------------------------------------------------
