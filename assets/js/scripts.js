@@ -14,6 +14,7 @@ Version      : 1.0
 			$('.preloader').delay(350).fadeOut('slow'); 
 		}); 
 		/*END PRELOADER JS*/
+        $('#datepicker').datepicker();
 
 		/*START MENU JS*/
 			$('a.page-scroll').on('click', function(e){

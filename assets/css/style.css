@@ -461,6 +461,7 @@ text-transform: capitalize;
 color: #fff;
 margin: auto;
 width: 70%;
+font-size: 16px;
 }
 @media only screen and (max-width:768px) {
 .single-slide-item p  {width: 100%;padding:0px 10px}
@@ -1107,8 +1108,21 @@ height: 52px;
 padding: 10px;
 width: 520px;
 }
+
+.contact select {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #e8e8e9;
+    border-radius: 2px;
+    box-shadow: none;
+    color: #333;
+    height: 52px;
+    padding: 10px;
+    width: 520px;
+}
+
 @media only screen and (max-width:768px) {
     .contact input { width: 100% }
+    .contact select { width: 100% }
 }
 .contact textarea {
 background: #fff none repeat scroll 0 0;
@@ -1123,6 +1137,12 @@ border: 1px solid #e8e8e9;
     .contact textarea { width: 100% }
 }
 .contact input:focus {
+    border: 1px solid #A39168;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.contact select:focus {
     border: 1px solid #A39168;
     box-shadow: none;
     outline: 0 none;
