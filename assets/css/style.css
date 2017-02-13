@@ -76,8 +76,14 @@ a:hover {
     text-decoration: none;
 }
 
-.map_a:hover {
+a.map_a:hover {
+    color: #A39168;
     text-decoration: underline;
+}
+
+a.map_a {
+    color: #A39168;
+    text-decoration: none;
 }
 a:focus {
     outline: none;
@@ -152,6 +158,7 @@ fieldset {
 .section-padding { padding:60px 0 }
 /*START SECTION TITLE DESIGN*/
 .section-title { margin-bottom: 30px }
+.section-title-tinner{ margin-bottom: 15px; padding-top: 25px; }
 .margin-bottom-20 { margin-bottom: 20px }
 .section-title  h2 {
 font-weight: 500;
@@ -1084,12 +1091,14 @@ transition: all 0.2s ease 0s;
 * 13.START CONTACT FORM , MAP CONTACT ADDRESS DESIGN
 * ----------------------------------------------------------------------------------------
 */
-.contact_area {background:#f9f9f9}
+.contact_area {background:#f9f9f9 }
 #map { height: 500px }
 .contact {
     padding-left: 50px;
-    padding-right: 60px;
+    padding-right: 50px;
     padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
 }
 @media only screen and (max-width:768px) {
     .contact { padding: 60px 60px 60px 50px }
@@ -1107,6 +1116,7 @@ color: #333;
 height: 52px;
 padding: 10px;
 width: 520px;
+    margin: 0 auto;
 }
 
 .contact select {
@@ -1118,6 +1128,7 @@ width: 520px;
     height: 52px;
     padding: 10px;
     width: 520px;
+    margin: 0 auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -1177,15 +1188,34 @@ background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
 @media only screen and (max-width:768px) {
     .single_address { margin-bottom: 30px }
 }
-.single_address i {
-background: #A39168 none repeat scroll 0 0;
-border-radius: 30px;
-color: #fff;
-font-size: 24px;
-height: 55px;
-line-height: 55px;
-margin-bottom: 10px;
-width: 55px;
+
+
+.single_address a:hover i {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 30px;
+    border-width: 3px;
+    border-style: solid;
+    color: #A39168;
+    border-color: #A39168;
+    font-size: 24px;
+    height: 55px;
+    line-height: 52px;
+    margin-bottom: 13px;
+    width: 55px;
+}
+
+.single_address a i{
+    background: #A39168 none repeat scroll 0 0;
+    border-radius: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #A39168;
+    color: #fff;
+    font-size: 24px;
+    height: 55px;
+    line-height: 52px;
+    margin-bottom: 13px;
+    width: 55px;
 }
 .single_address p {}
 @media only screen and (max-width:768px) {

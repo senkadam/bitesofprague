@@ -27,22 +27,26 @@ $(document).ready(function() {
 
      $("#loader").show();
         $.ajax({
-            url: "contact.php",
-            type: "POST",
-            data:  new FormData(this),
-            contentType: false,
+            url: "https://formspree.io/senkadam@gmail.com",
+            method: "POST",
+            data: {email: $('#email-form').value(), datum: $('#datepicker').value(),pocetOsob:$('#amount-form').value()},
+            dataType: "json",
             cache: false,
             processData:false,
             success: function(data){
+                console.log(data);
 			  $('form#contact-form').slideUp("fast", function() {
 			  $(this).before('<div class="success">Thank you. Your Email was sent successfully.</div>');
 			  $("#loader").hide();
 			  })
-            }           
+            },
+            error: function(data){
+                console.log(data);
+            }
        });
-	   
+
 	   return false;
     }
- 
+
    });
 });
