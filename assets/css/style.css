@@ -26,6 +26,43 @@ Version      : 1.0
 * 01.GENERAL STYLE
 * ----------------------------------------------------------------------------------------
 */
+
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
 body {
 background: #fff none repeat scroll 0 0;
 color: #777;
@@ -158,7 +195,7 @@ fieldset {
 .section-padding { padding:60px 0 }
 /*START SECTION TITLE DESIGN*/
 .section-title { margin-bottom: 30px }
-.section-title-tinner{ margin-bottom: 15px; padding-top: 25px; }
+.section-title-tinner{ margin-bottom: 15px; padding-top: 40px; }
 .margin-bottom-20 { margin-bottom: 20px }
 .section-title  h2 {
 font-weight: 500;
@@ -243,7 +280,7 @@ width: 100%;
     background-color: transparent;
 }
 .navbar-brand { padding: 0px }
-.navbar-brand img {width: 150px;}
+.navbar-brand img {width: 100px;}
 @media only screen and (max-width:768px) {
     .single_address { margin-left: 10px; }
 }
@@ -706,14 +743,11 @@ z-index: 999;
 * 08.START PORTFOLIO DESIGN
 * ----------------------------------------------------------------------------------------
 */
-.template_portfolio{background:#f9f9f9;
-    padding-bottom: 50px;
-padding-top: 80px;}
+.template_portfolio{background:#f9f9f9;  }
 .single_project {
   padding-bottom: 40px;
 }
 .single_our_work{
-	margin-bottom:30px;
 	overflow: hidden;
 	text-align: center;
 	-webkit-transition: all 0.3s ease 0s;
@@ -856,7 +890,8 @@ transition: all 0.4s ease 0s;
 	overflow: hidden;
 }
 @media only screen and (max-width:768px) {
-.single_team {margin-bottom:40px}
+.single_team {margin-bottom:0px}
+    .template_team {padding-bottom:0px}
 }
 .team-hover {
 	position: absolute;
@@ -962,7 +997,7 @@ text-align: center;
 }
 .testimonial-text i{
 color: #A39168;
-font-size: 60px;
+font-size: 20px;
 margin-bottom: 20px;
 }
 .testimonial_img{
@@ -983,21 +1018,22 @@ margin-bottom: 10px;
 width: 150px;
 }
 
-.testimonial_img h4 {
-color: #fff;
+.testimonial-text h4 {
+color: #A39168;
 font-size: 18px;
 font-weight: 600;
 margin-bottom: 10px;
 text-transform: uppercase;
 }
-.testimonial_img h5{
-color: #fff;
-letter-spacing: 1px;
+.testimonial-text h5{
+    text-align: right;
+    font-style: italic;
+    letter-spacing: 1px;
 text-transform: uppercase;
 margin-bottom: 0;
 }
 .testimonial-text p {
-font-size: 18px;
+font-size: 13px;
 line-height: 28px;
 margin-bottom: 20px;
 overflow: hidden;
@@ -1017,8 +1053,8 @@ overflow: hidden;
   width: 5px;
 }
 .site-wrapper { margin-bottom: 65px }
-#team__carousel { margin-bottom: 70px }
-#team__carousel .carousel-indicators { bottom: -80px }
+#team__carousel { margin-bottom: 20px }
+#team__carousel .carousel-indicators { bottom: -60px }
 .carousel-control { display: none }
 /*
 * ----------------------------------------------------------------------------------------
@@ -1287,6 +1323,30 @@ a.footer:hover {
 a.footer {
     color: #fff;
     text-decoration: underline;
+}
+
+.padding-top {
+    padding-top: 50px;
+}
+
+.padding-bottom-40 {
+    padding-bottom: 40px;
+}
+
+.ukunstatu_href:hover {
+    color: #A39168;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.ukunstatu_href {
+    color: #A39168;
+    font-weight: bold;
+}
+
+.no-margin {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 /*
 * ----------------------------------------------------------------------------------------
