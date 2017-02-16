@@ -191,6 +191,7 @@ fieldset {
     }
 }
 .no-padding { padding: 5px }
+.no-padding-real { padding: 0px }
 /*END PRELOADER DESIGN*/
 .section-padding { padding:60px 0 }
 /*START SECTION TITLE DESIGN*/
