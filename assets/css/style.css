@@ -190,7 +190,7 @@ fieldset {
         transform: rotate(360deg);
     }
 }
-.no-padding { padding: 0 }
+.no-padding { padding: 5px }
 /*END PRELOADER DESIGN*/
 .section-padding { padding:60px 0 }
 /*START SECTION TITLE DESIGN*/
