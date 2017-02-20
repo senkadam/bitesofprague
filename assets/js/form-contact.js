@@ -46,7 +46,7 @@ $(document).ready(function () {
                 console.log( xhr.status, xhr.statusText )
                 console.log(xhr.responseText);
                 $('form#contact-form').slideUp("fast", function () {
-                    $(this).before('<div class="success">Thank you. We will confirm your booking via email.</div>');
+                    $(this).before('<div class="success"><p><b>Thank you. We will confirm your booking via email.</b></p><p>Please be sure to let us know if you (or anyone from your group) has a dietary restriction (e.g. vegetarian, abstinent, celiac, allergy, etc.) before you purchase your tickets. Thanks a lot.</p></div>');
                     $("#loader").hide();
                 });
                 return;
