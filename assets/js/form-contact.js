@@ -1,52 +1,60 @@
-
 // JavaScript contact form Document
-$(document).ready(function() {
-	$('form#contact-form').submit(function() {
-	$('form#contact-form .error').remove();
-	var hasError = false;
-	$('.requiredField').each(function() {
-	if(jQuery.trim($(this).val()) == '') {
-    var labelText = $(this).prev('label').text();
-    $(this).parent().append('<span class="error">You forgot to enter your '+labelText+'</span>');
-    $(this).addClass('inputError');
-    hasError = true;
-    } else if($(this).hasClass('email')) {
-    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    if(!emailReg.test(jQuery.trim($(this).val()))) {
-    var labelText = $(this).prev('label').text();
-    $(this).parent().append('<span class="error">You entered an invalid '+labelText+'</span>');
-    $(this).addClass('inputError');
-    hasError = true;
-    }
-    }
-    });
-    if(!hasError) {
-    $('form#contact-form input.submit').fadeOut('normal', function() {
-    $(this).parent().append('');
-    });
+$(document).ready(function () {
+    $('form#contact-form').submit(function () {
+        $form = $(this); //wrap this in jQuery
 
-     $("#loader").show();
-        $.ajax({
-            url: "https://formspree.io/senkadam@gmail.com",
-            method: "POST",
-            data: {email: $('#email-form').value(), datum: $('#datepicker').value(),pocetOsob:$('#amount-form').value()},
-            dataType: "json",
-            cache: false,
-            processData:false,
-            success: function(data){
-                console.log(data);
-			  $('form#contact-form').slideUp("fast", function() {
-			  $(this).before('<div class="success">Thank you. Your Email was sent successfully.</div>');
-			  $("#loader").hide();
-			  })
-            },
-            error: function(data){
-                console.log(data);
+        $('form#contact-form .error').remove();
+        var hasError = false;
+        $('.requiredField').each(function () {
+            if (jQuery.trim($(this).val()) == '') {
+                var labelText = $(this).prev('label').text();
+                $(this).parent().append('<span class="error">This field is required</span>');
+                $(this).addClass('inputError');
+                hasError = true;
+            } else if ($(this).hasClass('email')) {
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                if (!emailReg.test(jQuery.trim($(this).val()))) {
+                    var labelText = $(this).prev('label').text();
+                    $(this).parent().append('<span class="error">You entered an invalid ' + labelText + '</span>');
+                    $(this).addClass('inputError');
+                    hasError = true;
+                }
             }
-       });
+        });
+        if (!hasError) {
+            $('form#contact-form input.submit').fadeOut('normal', function () {
+                $(this).parent().append('');
+            });
 
-	   return false;
-    }
+            $("#loader").show();
+            console.log($form.attr('action'));
+            var url = $form.attr('action'); //
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', url);
+            // xhr.withCredentials = true;
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                console.log( xhr.status, xhr.statusText )
+                console.log(xhr.responseText);
+                $('form#contact-form').slideUp("fast", function () {
+                    $(this).before('<div class="success">Thank you. We will confirm your booking via email.</div>');
+                    $("#loader").hide();
+                });
+                return;
+            };
+            var data = {email: $('#email-form').val(), datum: $('#datepicker').val(),pocetOsob:($('#amount-form').val() || 1)}
+            // url encode form data for sending as post data
+            var encoded = Object.keys(data).map(function(k) {
+                return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+            }).join('&')
+            console.log(encoded);
+            xhr.send(encoded+'&'+'prefix=done');
 
-   });
+
+            return false;
+        }
+
+        return false;
+
+    });
 });
