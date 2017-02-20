@@ -15,7 +15,7 @@ $(document).ready(function () {
                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                 if (!emailReg.test(jQuery.trim($(this).val()))) {
                     var labelText = $(this).prev('label').text();
-                    $(this).parent().append('<span class="error">You entered an invalid ' + labelText + '</span>');
+                    $(this).parent().append('<span class="error">You entered an invalid e-mail</span>');
                     $(this).addClass('inputError');
                     hasError = true;
                 }
@@ -27,13 +27,22 @@ $(document).ready(function () {
             });
 
             $("#loader").show();
-            console.log($form.attr('action'));
-            var url = $form.attr('action'); //
+            var url = 'https://script.google.com/macros/s/AKfycbxcVedcnMOfj1L9eP8WxNEboghKpxNf_kAJNMVm1QTqsIwOtWM/exec'
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', url);
+            var data = {
+                email: $('#email-form').val(),
+                datum: $('#datepicker').val(),
+                pocetOsob:($('#amount-form').val() || 1),
+                prefix: 'formIsReady'
+            };
+            // url encode form data for sending as post data
+            var encoded = Object.keys(data).map(function(k) {
+                return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+            }).join('&');
+            xhr.open('GET', url+'?'+encoded);
             // xhr.withCredentials = true;
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
+            xhr.onload  = function() {
                 console.log( xhr.status, xhr.statusText )
                 console.log(xhr.responseText);
                 $('form#contact-form').slideUp("fast", function () {
@@ -42,13 +51,9 @@ $(document).ready(function () {
                 });
                 return;
             };
-            var data = {email: $('#email-form').val(), datum: $('#datepicker').val(),pocetOsob:($('#amount-form').val() || 1)}
-            // url encode form data for sending as post data
-            var encoded = Object.keys(data).map(function(k) {
-                return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-            }).join('&')
+
             console.log(encoded);
-            xhr.send(encoded+'&'+'prefix=done');
+            xhr.send(null);
 
 
             return false;
